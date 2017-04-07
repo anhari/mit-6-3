@@ -1,0 +1,24 @@
+---
+layout: default
+title: Your Name – Tags
+---
+<div class="tags-wrapper">
+  <h2>Articles by topic</h2>
+  <div class="tags">
+    {% assign sorted_tags = (site.tags | sort:0) %}
+    {% for tag in sorted_tags %}
+    <div class="articles-by-tag">
+      <h3 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h3>
+      <ul class="tag-list">
+        {% for post in tag[1] %}
+        <li>
+          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+</div>

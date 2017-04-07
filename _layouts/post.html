@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="article-wrapper">
+  <article>
+    <section class="post-front-matter">
+      <h2>{{ page.title }}</h2>
+      <p class="date">
+        {% if page.date != null %}
+        {% assign d = page.date | date: "%-d" %}
+        {{ page.date | date: "%B" }}
+        {% case d %}{% when "1" or "21" or "31" %}{{ d }}st{% when "2" or "22" %}{{ d }}nd{% when "3" or "23" %}{{ d }}rd{% else %}{{ d }}th{% endcase %},
+        {{ page.date | date: "%Y" }}
+        {% endif %}
+      </p>
+      <ul class="tags">
+        {% for tag in page.tags %}
+          <li class="tag">
+            <a href="/tags#{{tag}}">{{ tag }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+    <section class="post-content">
+      {{ content }}
+      <div class="back-link">
+        <a href="/">&larr; Articles</a>
+      </div>
+    </section>
+  </article>
+</div>

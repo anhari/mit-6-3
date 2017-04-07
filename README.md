@@ -1,3 +1,3 @@
-# Doctor's Lounge
+# MIT 6-3
 
-Jekyll starter template with bourbon, neat, and bitters installed.
+Course map for satisfying MIT's 6-3 Computer Science and Engineering major.

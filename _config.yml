@@ -32,3 +32,5 @@ exclude:
   - vendor
   - Gemfile
   - Gemfile.lock
+
+theme: jekyll-theme-dinky
